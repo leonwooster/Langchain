@@ -3,7 +3,6 @@
 import os
 from dotenv import load_dotenv
 from langchain.prompts import PromptTemplate
-#from langchain_community.llms import OpenAI #old version
 from langchain_openai import OpenAI
 from langchain.chains import LLMChain
 
@@ -19,5 +18,4 @@ llm = OpenAI(temperature=0.9)
 chain = LLMChain(llm=llm, prompt=prompt)
 
 #A dictionary of key value pairs.
-#print(chain.run({"company": "ABC Startup", "product": "colorful socks"})) #old version
 print(chain.invoke({"company": "ABC Startup", "product": "colorful socks"}))
