@@ -23,6 +23,5 @@ second_chain = LLMChain(llm=llm, prompt=second_prompt)
 
 '''output from first chain becomes input of second chain'''
 overall_chain = SimpleSequentialChain(chains=[first_chain, second_chain], verbose=True)
-#catchphrase = overall_chain.run("colorful socks")
 catchphrase = overall_chain.invoke(input= {"input": "variety of Nyonya kueh"})
 print(catchphrase)
